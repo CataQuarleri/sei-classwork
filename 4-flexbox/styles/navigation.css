@@ -1,0 +1,36 @@
+header{
+    margin-top: 100px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+    nav > ul {
+        display: flex;
+        list-style-type: none;
+        padding: 14px 0 14px 0;
+        /*When three values are specified, the first margin applies to the top, the second to the right and left, the third to the bottom.*/
+        margin: -8px -8px -8px;
+        background-color: white;
+        border: 1px dashed red;
+    }
+    li a {
+        border: 1px solid #000;
+        padding: 10px 30px;
+        text-decoration: none;
+        color: black;
+    }
+
+    .link1{
+
+    }
+    .link2{
+
+    }
+    .link3{
+    }
+    .link4{
+
+    }
+    .link5{
+
+    }
