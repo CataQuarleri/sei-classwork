@@ -1,6 +1,19 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh
+}
+
 .container {
     display: flex;
-    justify-content: space-evenly;
+    height: 300px;
+    width: 350px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: space-between;
+    /* margin: center; */
+    /* height: 100vh; */
 }
 
 .boxes {
@@ -8,19 +21,40 @@
     width: 99px;
     height: 99px;
     text-align: center;
-    font-size: 30px;
+    font-size: 20px;
 }
 
-#box1 { background-color: green; 
-
-    /* margin-right: auto; */
+#box1 {
+     background-color: green; 
+     /* padding-left: 500px; */
+order: 1;
+    }
+#box2 { 
+    background-color: yellow; 
+order: 2;
 }
-#box2 { background-color: yellow; }
-#box3 { background-color: pink; }
-#box4 { background-color: blue; }
-#box5 { background-color: red; }
-#box6 { background-color: orange; }
-#box7 { background-color:beige; }
-#box8 { background-color: lightgrey; 
+#box3 { 
+    background-color: pink; 
+order: 3;
+}
+#box4 { 
+    background-color: blue;
+order: 4;
+}
+#box5 {
+     background-color: red; 
+    order: 5;
+    }
+#box6 {
+     background-color: orange; 
+    order: 6;
+    }
+#box7 { 
+    background-color:beige; 
+order: 7;
+}
+#box8 { 
+    background-color: lightgrey; 
 /* margin-left: auto; */
+order: 8;
 }
