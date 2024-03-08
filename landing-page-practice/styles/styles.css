@@ -1,0 +1,155 @@
+* {
+    background-color: aliceblue;
+    margin: 0
+}
+
+.headerBackground {
+    display: inline-block;
+    /* position: absolute; */
+    /* position: fixed; */
+    background-color: #b0fdfd93;
+    /* background-image: url(../images/header-image.gif); */
+    /* height: 100%; */
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 300px;
+    z-index: 00;
+
+}
+
+.headerImage {
+    position: relative;
+    z-index: -10;
+    height: 500px;
+    width: 100%
+}
+
+.navLine {
+    width: 80%;
+    position: relative;
+    left: 100px;
+    background-color: aliceblue;
+}
+
+.logo {
+    height: 111px;
+    width: 116px;
+    object-fit: fill;
+    border-radius: 33px;
+    z-index: 3;
+    position: relative;
+    top: 135px;
+}
+
+.navbar {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    background-color: white;
+    margin: 0;
+    top: -110px;
+}
+li {
+    display: inline-block;
+    margin: 5px;
+    background-color: white;
+}
+
+.headerTitle {
+    background-color: #e3eeb35e;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+
+ul {
+    text-align: right;
+    margin: 0 20px 0 10px
+}
+
+.upperNav {
+    margin-bottom: 10px;
+}
+
+.bgWhite {
+    background-color: white;
+
+}
+li:hover {
+    background-color: #e3eeb35e;
+    /* height: 30px; */
+    width: 50px;
+    font-weight: bold;
+}
+
+.infoContainers {
+margin: center;
+padding: 10px 0 0 10px;
+border-collapse: collapse;
+/* position: absolute; */
+}
+
+.eachContainer {
+    display: inline-block;
+    position: relative;
+    /* border-collapse: collapse; */
+    /* border: 2px solid black; */
+    height: 300px;
+    width: 30%;
+    margin: center;
+    text-align: center;
+}
+
+.eachContainer:nth-child(2) {
+    /* border-color: red */
+    border-right: 1px solid grey;
+    border-left: 1px solid grey
+}
+
+.squares {
+
+    border-collapse: collapse;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.eachSquare {
+    display: inline-block;
+    /* border: 1px solid black; */
+    width: 45vw;
+    height: 250px;
+    /* background-image: url(../images/square-bike-mechanic.jpeg); */
+    object-fit: cover;
+}
+.eachSquare img {
+    position: relative;
+    object-fit: cover;
+    width: 45vw;
+    height: 250px;
+}
+
+.footer {
+    background-color: aqua;
+    height: 300px;
+    width:100%;
+    margin-top: 40px;
+}
+
+.sponsorCircles {
+    position: relative;
+    background-color: rgba(250, 235, 215, 0.632);
+    bottom: -150px;
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 80px;
+    height: 70px;
+    display: inline-block;
+    text-align: center;
+}
+
+footer img {
+    position: relative;
+    left: 300px;
+}

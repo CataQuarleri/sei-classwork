@@ -1,0 +1,39 @@
+.mainBox {
+    border: 2px solid black;
+    height: 20em;
+    width: 15em;
+    position: absolute
+}
+.title {
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+    height: 73px;
+    width: 73px;
+    position: relative;
+    left: 80px;
+    top: 10%
+
+}
+
+.form {
+    position: relative;
+    top: 20%;
+    text-align: center;
+}
+
+.button {
+   background-color: #62A0FD;
+   border: none;
+   width: 25%;
+   height: 29px;
+   border-radius: 5px;
+   color: white
+}
+
+label {
+    align-items: start;
+    color: blue;
+}
