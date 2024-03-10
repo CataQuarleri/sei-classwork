@@ -1,22 +1,17 @@
 /* MAIN BODY AND CONTAINER */
 body {
-    /* background: rgb(34,193,195);
-    background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%); */
     background-color: #141414;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     letter-spacing: .1rem;
 }
 
 .mainContainer {
-    /* display: flex; */
     width: 80vw;
     border: 1px solid black;
-    /* padding: 0.5em; */
     margin: auto;
-    /* flex-flow: column */
     background-color: #282828;
     color: #F5F5F1;
-    /* padding: 50px */
+    padding-bottom: 40px;
 }
 /* UPPER SECTION */
 .section1 {
@@ -50,12 +45,38 @@ body {
 
 li {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-li span {
+.properties {
     font-weight: bold;
     text-align: right;
 }
+
+.properties ul {
+    padding: 5px;
+}
+
+.values ul {
+    padding: 5px;
+}
+
+li + li {
+    margin-top: 10px
+}
+
+.boxContainer:nth-of-type(2) {
+    display: flex;
+    width: 490px;
+    padding: 0;
+    padding-top: 40px;
+}
+
+/* li span {
+    font-weight: bold;
+    text-align: right;
+} */
 
 
 .boxContainer h3 {
@@ -82,6 +103,7 @@ li span {
 .detailsInfo h2 {
     background-color: #373737;
     font-size: 20px;
+    padding: 5px
 }
 
 .itemDetailTitleAndDates{
@@ -112,7 +134,8 @@ li span {
     background-color: #4DA7CC;
     width: 30px;
     text-align: center;
-    margin-right: 10px
+    margin-right: 10px;
+    padding: 5px;
 }
 
 .bggreen {
@@ -150,6 +173,7 @@ li span {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    padding-right: 3px
 }
 
 #line1 {
@@ -187,6 +211,35 @@ li span {
     font-weight: bold;
 }
 
+.section3list li {
+    list-style-type: square;
+
+}
+
+.section3list li::marker {
+    font-size: 30px;
+}
+
+#marker1::marker {
+    color: #27829B;
+}
+
+#marker2::marker {
+    color: #43A6CF;
+}
+
+#marker3::marker {
+    color: #65A33D;
+}
+
+#marker4::marker {
+    color: #FDBD27;
+}
+
+#marker5::marker {
+    color: #F12902;
+}
+
 .circles {
     width: 20px;
     height: 20px;
@@ -198,9 +251,25 @@ li span {
 .circlesFlex {
     display: flex;
     width: 80%;
-    margin-left: 10px;
+    margin: 10px;
 }
 
 #circle1 {
     margin-left: auto;
+}
+
+.blue {
+    background-color: #49A7CD;
+}
+
+.yellow {
+    background-color: #FDBD27
+}
+
+.skillsBoxes:first-of-type {
+    margin-top: 0;
+}
+
+.skillsBoxes {
+    margin-top: 60px;
 }
