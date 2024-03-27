@@ -78,7 +78,7 @@ const CourseInfo = {
       }
     }
   ];
-
+//AUXILIAR FUNCTIONS
   function checkCourseID (course, ag){
     if (course.id == ag.course_id){
       return true
@@ -106,75 +106,58 @@ const CourseInfo = {
       return false
     }
   }
-
-  function calculateAvg(avg, learnerObject){
-    let assignments = Object.keys(learnerObject).length - 2;
-    let totalAvg = avg/assignments;
-
-    return totalAvg
-  }
-// console.log("CALCULATE AVG!", calculateAvg(250, ))
+//MAIN FUNCTION
   function getLearnerData(course, ag, submissions) {
+    try {
     let courseValid = checkCourseID(course, ag)
     if (!courseValid){
       throw new Error ("The Assignment group does not belong to the current course")
     }
 
-    try {
-let eachLearner = []
+let eachLearner = [] //initializes array to deliver as result
 submissions.forEach((oneSubmission)=>{
-    let avg = 0 
-    let learnerObject = {}
-    let existingLearner = eachLearner.find(learner => learner.id === oneSubmission.learner_id);
-    let getAssignment = ag.assignments.filter(assignment => assignment.id === oneSubmission.assignment_id)
-    let assignmentDate = getAssignment[0].due_at;
-    let possiblePoints = Number(getAssignment[0].points_possible);
+    let score = 0 //initializes and sets to 0 score on each iteration
+    let learnerObject = {} //initializes and sets to empty learner object on each iteration
+    let existingLearner = eachLearner.find(learner => learner.id === oneSubmission.learner_id); //check if learner is already in array
+    let getAssignment = ag.assignments.filter(assignment => assignment.id === oneSubmission.assignment_id) //filter the current assignment for the learner submission in this iteration
+    let assignmentDate = getAssignment[0].due_at; //saves the date for use in auxiliar functions
+    let possiblePoints = Number(getAssignment[0].points_possible) == 0 ? 1 : Number(getAssignment[0].points_possible); //saves points for average and sets points to 1 in case is 0
 
-  if (!notYetDue(assignmentDate)){
+  if (!notYetDue(assignmentDate)){ //skips iteration of submission if the assignment is not yet due using auxiliar function
     console.log(`Assignment ${getAssignment[0].id} not yet due`)
   }else {
-
-    if(lateSubmission(oneSubmission.submission.submitted_at, assignmentDate)){
+    let assignmentIsLate = lateSubmission(oneSubmission.submission.submitted_at, assignmentDate);
+    if(assignmentIsLate){ //using boolean on previous line  discounts 10 to score if the submission was late
       console.log(`Learner ${oneSubmission.learner_id} submitted assignment ${oneSubmission.assignment_id} on a later date`)
     oneSubmission.submission.score -= 10
     }
 
-    if (existingLearner){
-        avg = existingLearner.avg[0] + Number(oneSubmission.submission.score)
-        pointsPerAssignment = existingLearner.avg[1] + Number(possiblePoints)
-        existingLearner[oneSubmission.assignment_id] = Number(((oneSubmission.submission.score) / possiblePoints).toFixed(2))
-        existingLearner.avg[0] = avg;
-        existingLearner.avg[1] = pointsPerAssignment
-    }else {
-        avg = Number(oneSubmission.submission.score)
-        learnerObject = {
-            id: oneSubmission.learner_id,
-            avg:  [avg, possiblePoints],
-            [oneSubmission.assignment_id]: Number((oneSubmission.submission.score / possiblePoints).toFixed(2))
-        } 
-       
-        eachLearner.push(learnerObject)
+    if (!existingLearner){ //boolean variable initialized at the beggining used to avoid repeating learner id in the array
+      score = Number(oneSubmission.submission.score) //sets the variable initialized at the beggining to the number of the first assignment submitted
+      learnerObject = { //sets the object initialized at the beggining with the content required 
+          id: oneSubmission.learner_id,
+          avg:  [score, possiblePoints], //first index is the sum of the averages and second index is sum of possible points for future average
+          [oneSubmission.assignment_id]: Number((oneSubmission.submission.score / possiblePoints).toFixed(2)) //names key as assignment id and value to average. The "toFixed" states the amount of decimals in the float
+      } 
+      eachLearner.push(learnerObject) //pushes this learner into array outside of the loop
+    }else { //if the learner already exists on the array
+      score = existingLearner.avg[0] + Number(oneSubmission.submission.score) //sums to the scores from previous assignments and current in iteration
+      pointsPerAssignment = existingLearner.avg[1] + Number(possiblePoints) //sums the points possible of previous assignments and current iteration
+      existingLearner[oneSubmission.assignment_id] = Number(((oneSubmission.submission.score) / possiblePoints).toFixed(2))
+      existingLearner.avg[0] = score; //assigned to first index in avg for future calculation
+      existingLearner.avg[1] = pointsPerAssignment; //assigned to second index in avg for future calculation
     }
   }
-})  
-let average = eachLearner.forEach(learner => 
-{  learner.avg = learner.avg[0] / learner.avg[1]
-console.log("LEARNER AVG", learner.avg)}
+})  //end of loop
+eachLearner.forEach(learner => learner.avg = learner.avg[0] / learner.avg[1]) //calculates average of score modifying each object in the array to divide the total score by the possible points sum
 
-  // learner.avg = Number(learner.avg[0] / learner.avg[1])
-  )
-console.log(average)
-console.log("EACH LEARNER", eachLearner)
-    }catch(e){
+return eachLearner // return of the main function
+
+    }catch(e){ //catches error
        console.log(e)
     }
   }
   
-  const result = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions);
+  const result = getLearnerData(CourseInfo, AssignmentGroup, LearnerSubmissions); //calls function
   
-  console.log(result);
-  
-  //the output of your program is an array of objects as follows {learnerid: 3, avg: 0.98, 1: 0.84, 2: 0.90}
-  //First I need to [id: LearnerSubmissions.id, avg: allLea ]
-//check courseInfo.id == AssignmentGroup.course_id
-//
+  console.log("result",result);
