@@ -29,7 +29,7 @@ const CourseInfo = {
       {
         id: 3,
         name: "Code the World",
-        due_at: "3156-11-15",
+        due_at: "2024-11-15",
         points_possible: 500
       }
     ]
@@ -79,35 +79,92 @@ const CourseInfo = {
     }
   ];
 
-  function checkCourseID (){
-
+  function checkCourseID (course, ag){
+    if (course.id == ag.course_id){
+      return true
+    } else {
+      return false
+    }
   }
 
+  function notYetDue (date){
+    let currentDate = new Date();
+    let assignmentDate = new Date(date)
+    if (assignmentDate > currentDate){
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  function lateSubmission(dateSubmitted, assignmentDate){
+    let submissionDate = new Date(dateSubmitted);
+    let dueDate = new Date(assignmentDate);
+    if (submissionDate > dueDate){
+      return true
+    } else {
+      return false
+    }
+  }
+
+  function calculateAvg(avg, learnerObject){
+    let assignments = Object.keys(learnerObject).length - 2;
+    let totalAvg = avg/assignments;
+
+    return totalAvg
+  }
+// console.log("CALCULATE AVG!", calculateAvg(250, ))
   function getLearnerData(course, ag, submissions) {
+    let courseValid = checkCourseID(course, ag)
+    if (!courseValid){
+      throw new Error ("The Assignment group does not belong to the current course")
+    }
+
     try {
 let eachLearner = []
-submissions.map((oneSubmission)=>{
+submissions.forEach((oneSubmission)=>{
     let avg = 0 
     let learnerObject = {}
     let existingLearner = eachLearner.find(learner => learner.id === oneSubmission.learner_id);
     let getAssignment = ag.assignments.filter(assignment => assignment.id === oneSubmission.assignment_id)
-    let possiblePoints = getAssignment[0].points_possible;
+    let assignmentDate = getAssignment[0].due_at;
+    let possiblePoints = Number(getAssignment[0].points_possible);
+
+  if (!notYetDue(assignmentDate)){
+    console.log(`Assignment ${getAssignment[0].id} not yet due`)
+  }else {
+
+    if(lateSubmission(oneSubmission.submission.submitted_at, assignmentDate)){
+      console.log(`Learner ${oneSubmission.learner_id} submitted assignment ${oneSubmission.assignment_id} on a later date`)
+    oneSubmission.submission.score -= 10
+    }
 
     if (existingLearner){
-        avg = existingLearner.avg + oneSubmission.submission.score
-        existingLearner.avg = avg;
-        existingLearner[oneSubmission.assignment_id] = Number((oneSubmission.submission.score / possiblePoints).toFixed(2))
+        avg = existingLearner.avg[0] + Number(oneSubmission.submission.score)
+        pointsPerAssignment = existingLearner.avg[1] + Number(possiblePoints)
+        existingLearner[oneSubmission.assignment_id] = Number(((oneSubmission.submission.score) / possiblePoints).toFixed(2))
+        existingLearner.avg[0] = avg;
+        existingLearner.avg[1] = pointsPerAssignment
     }else {
-        avg = oneSubmission.submission.score
+        avg = Number(oneSubmission.submission.score)
         learnerObject = {
             id: oneSubmission.learner_id,
-            avg: avg,
+            avg:  [avg, possiblePoints],
             [oneSubmission.assignment_id]: Number((oneSubmission.submission.score / possiblePoints).toFixed(2))
         } 
+       
         eachLearner.push(learnerObject)
     }
+  }
 })  
-console.log("output", eachLearner)
+let average = eachLearner.forEach(learner => 
+{  learner.avg = learner.avg[0] / learner.avg[1]
+console.log("LEARNER AVG", learner.avg)}
+
+  // learner.avg = Number(learner.avg[0] / learner.avg[1])
+  )
+console.log(average)
+console.log("EACH LEARNER", eachLearner)
     }catch(e){
        console.log(e)
     }

@@ -1,0 +1,463 @@
+const LearnerSubmissions = [{
+    "learner_id": 126,
+    "assignment_id": 8,
+    "submission": {
+      "submitted_at": "4/4/2023",
+      "score": 193
+    }
+  }, {
+    "learner_id": 39,
+    "assignment_id": 5,
+    "submission": {
+      "submitted_at": "1/4/2023",
+      "score": 62
+    }
+  }, {
+    "learner_id": 161,
+    "assignment_id": 2,
+    "submission": {
+      "submitted_at": "12/4/2022",
+      "score": 149
+    }
+  }, {
+    "learner_id": 77,
+    "assignment_id": 2,
+    "submission": {
+      "submitted_at": "12/8/2022",
+      "score": 4
+    }
+  }, {
+    "learner_id": 47,
+    "assignment_id": 1,
+    "submission": {
+      "submitted_at": "3/7/2023",
+      "score": 289
+    }
+  }, {
+    "learner_id": 174,
+    "assignment_id": 8,
+    "submission": {
+      "submitted_at": "12/7/2022",
+      "score": 69
+    }
+  }, {
+    "learner_id": 114,
+    "assignment_id": 3,
+    "submission": {
+      "submitted_at": "4/11/2023",
+      "score": 0
+    }
+  }, {
+    "learner_id": 163,
+    "assignment_id": 2,
+    "submission": {
+      "submitted_at": "4/10/2023",
+      "score": 98
+    }
+  }, {
+    "learner_id": 128,
+    "assignment_id": 5,
+    "submission": {
+      "submitted_at": "12/25/2022",
+      "score": 172
+    }
+  }, {
+    "learner_id": 30,
+    "assignment_id": 10,
+    "submission": {
+      "submitted_at": "12/19/2022",
+      "score": 205
+    }
+  }, {
+    "learner_id": 141,
+    "assignment_id": 5,
+    "submission": {
+      "submitted_at": "2/17/2023",
+      "score": 267
+    }
+  }, {
+    "learner_id": 58,
+    "assignment_id": 9,
+    "submission": {
+      "submitted_at": "3/28/2023",
+      "score": 29
+    }
+  }, {
+    "learner_id": 199,
+    "assignment_id": 6,
+    "submission": {
+      "submitted_at": "11/5/2022",
+      "score": 216
+    }
+  }, {
+    "learner_id": 61,
+    "assignment_id": 1,
+    "submission": {
+      "submitted_at": "12/19/2022",
+      "score": 267
+    }
+  }, {
+    "learner_id": 156,
+    "assignment_id": 4,
+    "submission": {
+      "submitted_at": "4/8/2023",
+      "score": 3
+    }
+  }, {
+    "learner_id": 46,
+    "assignment_id": 8,
+    "submission": {
+      "submitted_at": "12/25/2022",
+      "score": 181
+    }
+  }, {
+    "learner_id": 23,
+    "assignment_id": 6,
+    "submission": {
+      "submitted_at": "11/9/2022",
+      "score": 206
+    }
+  }, {
+    "learner_id": 13,
+    "assignment_id": 9,
+    "submission": {
+      "submitted_at": "11/19/2022",
+      "score": 212
+    }
+  }, {
+    "learner_id": 177,
+    "assignment_id": 6,
+    "submission": {
+      "submitted_at": "1/4/2023",
+      "score": 223
+    }
+  }, {
+    "learner_id": 23,
+    "assignment_id": 7,
+    "submission": {
+      "submitted_at": "11/6/2022",
+      "score": 391
+    }
+  }, {
+    "learner_id": 108,
+    "assignment_id": 1,
+    "submission": {
+      "submitted_at": "1/25/2023",
+      "score": 269
+    }
+  }, {
+    "learner_id": 96,
+    "assignment_id": 3,
+    "submission": {
+      "submitted_at": "12/23/2022",
+      "score": 51
+    }
+  }, {
+    "learner_id": 104,
+    "assignment_id": 1,
+    "submission": {
+      "submitted_at": "12/3/2022",
+      "score": 83
+    }
+  }, {
+    "learner_id": 111,
+    "assignment_id": 9,
+    "submission": {
+      "submitted_at": "11/3/2022",
+      "score": 180
+    }
+  }, {
+    "learner_id": 49,
+    "assignment_id": 10,
+    "submission": {
+      "submitted_at": "3/28/2023",
+      "score": 362
+    }
+  }, {
+    "learner_id": 150,
+    "assignment_id": 4,
+    "submission": {
+      "submitted_at": "12/31/2022",
+      "score": 218
+    }
+  }, {
+    "learner_id": 161,
+    "assignment_id": 5,
+    "submission": {
+      "submitted_at": "4/28/2023",
+      "score": 283
+    }
+  }, {
+    "learner_id": 197,
+    "assignment_id": 7,
+    "submission": {
+      "submitted_at": "1/25/2023",
+      "score": 200
+    }
+  }, {
+    "learner_id": 193,
+    "assignment_id": 6,
+    "submission": {
+      "submitted_at": "11/27/2022",
+      "score": 353
+    }
+  }, {
+    "learner_id": 22,
+    "assignment_id": 4,
+    "submission": {
+      "submitted_at": "11/24/2022",
+      "score": 252
+    }
+  }]
+
+const AssignmentGroup2 = {
+    "id": 81585,
+    "name": "Mrs",
+    "course_id": 63,
+    "group_weight": 65,
+    "assignments": [
+      {
+        "id": 949,
+        "name": "Dr",
+        "due_at": "2022-11-03",
+        "points_possible": 35
+      },
+      {
+        "id": 494,
+        "name": "Dr",
+        "due_at": "2023-03-01",
+        "points_possible": 148
+      },
+      {
+        "id": 869,
+        "name": "Ms",
+        "due_at": "2023-04-16",
+        "points_possible": 28
+      },
+      {
+        "id": 104,
+        "name": "Mrs",
+        "due_at": "2023-04-20",
+        "points_possible": 105
+      },
+      {
+        "id": 336,
+        "name": "Honorable",
+        "due_at": "2023-02-09",
+        "points_possible": 307
+      }
+    ]
+  }
+
+  const AssignmentGroup3 = {
+    "id": 17093,
+    "name": "Rev",
+    "course_id": 2,
+    "group_weight": 39,
+    "assignments": [
+      {
+        "id": 898,
+        "name": "Ms",
+        "due_at": "2023-03-05",
+        "points_possible": 285
+      }
+    ]
+}
+
+ const AssignmentGroup4 = {
+    "id": 89142,
+    "name": "Mrs",
+    "course_id": 383,
+    "group_weight": 73,
+    "assignments": [
+      {
+        "id": 548,
+        "name": "Ms",
+        "due_at": "2023-01-25",
+        "points_possible": 21
+      },
+      {
+        "id": 15,
+        "name": "Rev",
+        "due_at": "2023-04-30",
+        "points_possible": 303
+      },
+      {
+        "id": 676,
+        "name": "Ms",
+        "due_at": "2022-11-02",
+        "points_possible": 70
+      },
+      {
+        "id": 746,
+        "name": "Mr",
+        "due_at": "2023-04-21",
+        "points_possible": 367
+      },
+      {
+        "id": 356,
+        "name": "Ms",
+        "due_at": "2023-03-13",
+        "points_possible": 192
+      },
+      {
+        "id": 26,
+        "name": "Dr",
+        "due_at": "2022-12-08",
+        "points_possible": 205
+      },
+      {
+        "id": 946,
+        "name": "Honorable",
+        "due_at": "2022-12-30",
+        "points_possible": 256
+      },
+      {
+        "id": 422,
+        "name": "Mr",
+        "due_at": "2023-02-10",
+        "points_possible": 67
+      },
+      {
+        "id": 214,
+        "name": "Mrs",
+        "due_at": "2023-01-25",
+        "points_possible": 216
+      }
+    ]
+  }
+
+const AssignmentGroup5 ={
+    "id": 57300,
+    "name": "Rev",
+    "course_id": 395,
+    "group_weight": 79,
+    "assignments": [
+      {
+        "id": 609,
+        "name": "Ms",
+        "due_at": "2022-12-14",
+        "points_possible": 35
+      },
+      {
+        "id": 13,
+        "name": "Honorable",
+        "due_at": "2022-11-23",
+        "points_possible": 240
+      },
+      {
+        "id": 7,
+        "name": "Mr",
+        "due_at": "2023-04-12",
+        "points_possible": 107
+      },
+      {
+        "id": 674,
+        "name": "Ms",
+        "due_at": "2023-02-10",
+        "points_possible": 278
+      },
+      {
+        "id": 504,
+        "name": "Honorable",
+        "due_at": "2023-03-16",
+        "points_possible": 289
+      },
+      {
+        "id": 572,
+        "name": "Mr",
+        "due_at": "2022-11-04",
+        "points_possible": 85
+      },
+      {
+        "id": 993,
+        "name": "Mrs",
+        "due_at": "2023-04-07",
+        "points_possible": 263
+      },
+      {
+        "id": 326,
+        "name": "Honorable",
+        "due_at": "2023-01-30",
+        "points_possible": 385
+      },
+      {
+        "id": 832,
+        "name": "Honorable",
+        "due_at": "2023-01-29",
+        "points_possible": 191
+      }
+    ]
+  }
+
+const AssignmentGroup6 = {
+    "id": 23936,
+    "name": "Mrs",
+    "course_id": 999,
+    "group_weight": 46,
+    "assignments": [
+      {
+        "id": 496,
+        "name": "Honorable",
+        "due_at": "2023-01-03",
+        "points_possible": 101
+      }
+    ]
+  }
+
+const AssignmentGroup7 = {
+    "id": 13543,
+    "name": "Honorable",
+    "course_id": 911,
+    "group_weight": 35,
+    "assignments": [
+      {
+        "id": 342,
+        "name": "Dr",
+        "due_at": "2023-02-26",
+        "points_possible": 143
+      },
+      {
+        "id": 50,
+        "name": "Dr",
+        "due_at": "2023-04-22",
+        "points_possible": 251
+      },
+      {
+        "id": 759,
+        "name": "Mrs",
+        "due_at": "2023-01-10",
+        "points_possible": 72
+      },
+      {
+        "id": 991,
+        "name": "Mrs",
+        "due_at": "2023-04-28",
+        "points_possible": 55
+      },
+      {
+        "id": 617,
+        "name": "Ms",
+        "due_at": "2023-01-22",
+        "points_possible": 210
+      },
+      {
+        "id": 613,
+        "name": "Rev",
+        "due_at": "2022-12-16",
+        "points_possible": 354
+      }
+    ]
+  }
+
+
+const Course1 = {"id":950,"name":"sed nisl nunc rhoncus dui"}
+const Course2 = {"id":343,"name":"mauris vulputate elementum nullam"}
+const Course3 = {"id":553,"name":"fermentum donec ut mauris eget"}
+const Course4 = {"id":866,"name":"ut blandit non interdum"}
+const Course5 = {"id":541,"name":"magnis dis parturient montes"}
+const Course6 = {"id":987,"name":"quam sollicitudin vitae"}
+const Course7 = {"id":458,"name":"ante ipsum primis in faucibus"}
+const Course8 = {"id":608,"name":"nibh ligula nec sem duis"}
+const Course9 = {"id":610,"name":"tincidunt eu felis fusce posuere"}
+const Course0 = {"id":618,"name":"ullamcorper augue a suscipit"}
