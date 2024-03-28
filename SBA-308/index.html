@@ -4,9 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+<!-- Frontend will be a form with all mandatory fields  -->
+<!-- Progressive forms, one after the other, first the course info, then the assignment info and finally all the learners info -->
+<!-- One learner per form but the option to "add new learner" -->
+<!-- On submission we get the JSON output and eventually format it in a cool way -->
+<!-- It will save and show each information submitted and some inputs will be filled only by dropdown and selecting appropriate info  -->
+<main>   
+<h1>Calculate your class grades</h1>
+        <div class="formBox">
+            <form action="submit" name="courseInfo" >
+        <input type="number" placeholder="Course ID">
+        <input type="text" placeholder="Name of the course">
+                <button type="submit">Submit Course</button>
+            </form>
+        </div>
+        <div class="formBox">
+            <form action="submit" name="AssignmentGroup" >
+                <input type="number" placeholder="Assignment ID">
+                <input type="text" placeholder="Name of the assignment">
+                <label for="selectCourse"></label>
+                <select name="course" id="selectCourse">
+                    <option value="">Please choose a course</option>
+                </select>
+                <input type="number" placeholder="Group Weight">
+                <button type="submit">Submit Assignment Group</button>
+            </form>
+        </div>
+        <div class="formBox">
+            <form action="submit" name="eachAssignment" >
+                <label for="selectAssignment"></label>
+                <select name="course_id" id="selectCourse">
+                    <option value="">Please choose an assignment group</option>
+                </select>
+                <input type="number" name="Assignment ID" placeholder="Assignment ID">
+                <input type="text" name="Assignment name" placeholder="Name of the assignment">
+                <label for="Assignment Due Date">When is the assignment due?</label>
+                <input type="date" name="Assignment Due Date">
+                <input type="number" name="Possible points" placeholder="Possible points in this assignment">
+                <button type="submit" name="One assignment">Submit assignment to assignment group</button>
+            </form>
+        </div>
+        <div class="formBox">
+            <form action="submit" name="LearnerSubmission" >
+                <label for="Assignment Group"></label>
+                <select name="Assignment Group" id="assignmentGroup">
+                    <option value="">Please choose an assignment group</option>
+                </select>
+                <label for="Assignment ID"></label>
+                <select name="Assignment ID" id="assignmentId">
+                    <option value="">Please choose an assignment</option>
+                </select>
+        <input type="number" placeholder="Learner's ID">
+        <label for="Assignment Due Date">When was the assignment submitted?</label>
+        <input type="date" name="Assignment Submission Date">
+        <input type="number" placeholder="Score for this assignment">
+        <button type="submit">Submit student's assignment info</button>
+            </form>
+        </div>
+        <div class="output">
+            Your class information: 
+            <div class="table">
+                
+            </div>
+        </div>
+    </main>
 </body>
 </html>

@@ -1,0 +1,17 @@
+.formBox {
+    width: 50%;
+    height: 50%;
+    border: 2px solid black;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-flow: wrap column;
+    /* align-content: center; */
+}
+main {
+    display: flex;
+    flex-flow: wrap column;
+    align-content: center;
+}

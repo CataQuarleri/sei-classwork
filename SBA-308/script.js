@@ -108,7 +108,7 @@ function lateSubmission(dateSubmitted, assignmentDate) {
 }
 //MAIN FUNCTION
 function getLearnerData(course, ag, submissions) {
-	try {
+	try { //handles possible errors
 		let courseValid = checkCourseID(course, ag);
 		if (!courseValid) {
 			throw new Error('The Assignment group does not belong to the current course');
@@ -155,7 +155,7 @@ function getLearnerData(course, ag, submissions) {
       if (eachLearner.length <= 0){
         break; // finishes the loop
       } else if (eachLearner[i].avg[0] === 0){
-        
+
        continue; //continues to next iteration
       }else {
         eachLearner[i].avg = eachLearner[i].avg[0] / eachLearner[i].avg[1]
@@ -176,3 +176,6 @@ const result = getLearnerData(
 ); //calls function
 
 console.log('result', result);
+
+let table = document.querySelector(".table")
+table.append(JSON.stringify(result))
